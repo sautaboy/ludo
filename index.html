@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game || Ludo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!--  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="confetti"></div>
+
+    <div id="winner-div">
+        <i class="ri-close-line winner-cancel-button"></i>
+        <span class="winner-text">Winner</span>
+        <span id="winner-player">
+        </span>
+        <span id="got-points">
+            
+        </span>
+    </div>
+
+
+    <form action="" id="form-to-play">
+        <i class="ri-close-line form-close-button"></i>
+        <center>
+            <h2 class="register-your-name">Register Your Name To Play
+                With Friends
+            </h2>
+        </center>
+
+        <label for="">
+            Player One:
+            <input type="text" name="firstPlayer" id="first-player" placeholder="First Player Name" required>
+        </label>
+        <label for="">
+            Player Two:
+            <input type="text" name="secondPlayer" id="second-plyer" placeholder="Second Player Name" required>
+        </label>
+
+        <label for="">
+            <input class="play-button" type="submit" value="Play">
+        </label>
+    </form>
+
+    <div id="main">
+        <div id="dice-main">
+            <div id="left-div">
+                <div class="dice-number" key="1">
+                    <div class="dot"></div>
+                </div>
+                <div class="dice-number" key="2">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="3">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="4">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="5">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="6">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+
+                <strong class="first-player">
+                    You
+                </strong>
+            </div>
+
+            <div id="right-div">
+                <div class="dice-number" key="1">
+                    <div class="dot"></div>
+                </div>
+                <div class="dice-number" key="2">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="3">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="4">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="5">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+                <div class="dice-number" key="6">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+
+                <strong class="second-player">
+                    Computer
+                </strong>
+            </div>
+
+
+        </div>
+
+        <div id="result-box">
+            <div class="vs">
+                - VS -
+            </div>
+
+            <div id="first-person">
+
+                <div class="name">
+                    <h1 class="first-player">
+                        You
+                    </h1>
+                </div>
+                <h2>Score: <span class="first-person-score">0</span> </h2>
+
+            </div>
+            <div id="second-person">
+
+                <div class="name">
+                    <h1 class="second-player">
+                        Computer
+                    </h1>
+                </div>
+                <h2>Score: <span class="second-person-score">0</span> </h3>
+
+            </div>
+
+
+
+
+        </div>
+        <button class="suffle-button" role="button">
+            <span class="suffle-button-shadow"></span>
+            <span class="suffle-button-edge"></span>
+            <span class="suffle-button-front text">Suffle</span>
+        </button>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.2/tsparticles.confetti.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

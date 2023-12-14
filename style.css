@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+#main {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: hsl(345deg 80% 45%);
+
+}
+
+#winner-div {
+    height: fit-content;
+    width: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    /* opacity: 0; */
+    display: none;
+
+    /* From https://css.glass */
+    background: rgba(249, 92, 92, 0.136);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.286);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10rem;
+    height: 95%;
+}
+
+#got-points,
+#winner-player {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    filter: drop-shadow(1px 1px 1px black);
+    letter-spacing: 5px;
+    border-bottom: 2px dotted white;
+}
+
+#winner-player {
+    border: none;
+    color: goldenrod;
+}
+
+#winner-div span:nth-child(1) {
+    font-size: 40px;
+    letter-spacing: 10px;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+
+#winner-div span:nth-child(2) {
+    font-size: 50px;
+    color: palegoldenrod;
+    letter-spacing: 5px;
+    text-transform: capitalize;
+    filter: drop-shadow(-1px 1px 2px black);
+}
+
+
+
+.ri-close-line {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.ri-close-line:hover {
+    font-size: 2.1rem;
+}
+
+
+form#form-to-play {
+    position: relative;
+    padding: 2rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    gap: 20px;
+
+    /* height: fit-content; */
+
+    /* From https://css.glass */
+    background: rgba(249, 92, 92, 0.348);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.286);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+form#form-to-play label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+form#form-to-play label input {
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    background: hsl(345deg 80% 80%);
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+
+h2.register-your-name {
+    color: #fddbdb;
+    letter-spacing: 2px;
+    filter: drop-shadow(0px 1px 1px #000);
+    margin-bottom: 10px;
+}
+
+form#form-to-play label input[value="Play"] {
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* CSS */
+.play-button {
+    background-color: #000;
+    background-image: none;
+    /* border: 1px solid #000; */
+    border-radius: 4px;
+    box-shadow: #f77c7c 4px 4px 0 0, #000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.play-button:focus {
+    text-decoration: none;
+}
+
+.play-button:hover {
+    text-decoration: none;
+}
+
+.play-button:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+}
+
+.play-button:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .play-button {
+        padding: 12px 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#dice-main {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10vw;
+    gap: 20px;
+}
+
+#left-div,
+#right-div {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid white;
+    filter: drop-shadow(0px 0px 10px black);
+
+}
+
+strong {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    letter-spacing: 2px;
+}
+
+
+.dice-number {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: hsl(345deg 100% 47%);
+    box-shadow: 0px 0px 2px hsl(345deg 100% 48%);
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.587));
+    padding: 20px;
+}
+
+strong.first-player {
+    width: 100%;
+    text-align: center;
+    white-space: none;
+    text-wrap: nowrap;
+    text-transform: capitalize;
+
+
+}
+
+#right-div strong {
+    background: none;
+    width: 100%;
+    text-align: center;
+    white-space: none;
+    text-wrap: nowrap;
+    text-transform: capitalize;
+}
+
+#right-div>* {
+    background: green;
+}
+
+
+
+.dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    filter: drop-shadow(0px 0px 1px black);
+
+}
+
+
+.dice-number:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-number:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dice-number:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dice-number:nth-child(4) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+.dice-number:nth-child(5) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+.dice-number:nth-child(5) div:nth-child(5) {
+    position: absolute;
+}
+
+.dice-number:nth-child(6) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+
+/* result box */
+#result-box {
+    width: 70%;
+    height: 20vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1rem;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+#result-box>* {
+    color: white;
+    letter-spacing: 4px;
+    width: 50%;
+    /* background: hsl(345deg 95% 60%); */
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+#result-box>*>h2 {
+    font-weight: bold;
+    font-size: 50px;
+    color: #ede9e9;
+    filter: drop-shadow(0px 0px 1px black);
+}
+
+
+
+#result-box>*>.name>* {
+    font-weight: 600;
+    filter: drop-shadow(0px 1px 1px black);
+    font-size: 28px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#result-box .vs {
+    position: absolute;
+    background: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    width: fit-content;
+    font-size: 40px;
+    font-weight: 400;
+    filter: drop-shadow(0px 0px 1px black);
+}
+
+
+
+
+
+
+/* CSS */
+.suffle-button {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.suffle-button-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.suffle-button-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            hsl(340deg 100% 16%) 0%,
+            hsl(340deg 100% 32%) 8%,
+            hsl(340deg 100% 32%) 92%,
+            hsl(340deg 100% 16%) 100%);
+}
+
+.suffle-button-front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .suffle-button-front {
+        font-size: 1.25rem;
+        padding: 12px 42px;
+    }
+
+
+
+
+
+
+
+
+
+}
+
+.suffle-button:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+}
+
+.suffle-button:hover .suffle-button-front {
+    transform: translateY(-6px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.suffle-button:active .suffle-button-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.suffle-button:hover .suffle-button-shadow {
+    transform: translateY(4px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.suffle-button:active .suffle-button-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.suffle-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+@media (max-width:920px) {
+
+
+
+    form#form-to-play,
+    #winner-div {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+
+
+    #dice-main {
+        padding: 10px;
+    }
+
+    #result-box .vs {
+        display: none;
+    }
+
+
+    #result-box {
+        width: 100%;
+        padding: 10px;
+        height: fit-content;
+    }
+
+
+    #result-box {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    #result-box>* {
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        background: none;
+        border-bottom: 1px solid black;
+    }
+
+    .suffle-button {
+        bottom: 2rem;
+    }
+
+
+
+}
